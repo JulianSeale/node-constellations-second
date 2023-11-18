@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>Your Constellations Project</title>
+</head>
+<body>
+ <h3> IF YOU WANT ADD YOUR FAVORITES SCROLL DOWN!</h3> 
+ <h3>NOW WITH EDIT AND DELETE BUTTONS!</h3>
+ <h3>A SIMPLE CLICK THEN WATCH THE MAGIC</h3>
+ <div id="welcome-popup">Welcome to Constellations! (This message will disapper in 10 seconds)</div>
+  <div class="container" id="app">  </div>
+  <div id="form" class="form-container">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year" required>
+    <label for="myth">Myth:</label>
+    <textarea id="myth" name="myth" required></textarea>
+    <label for="culture">Culture:</label>
+    <input type="text" id="culture" name="culture" required>
+    <label for="appearance">Appearance:</label>
+    <textarea id="appearance" name="appearance" required></textarea>
+    <label for="distance">Distance from Earth (miles):</label>
+    <input type="number" id="distance" name="distance" required>
+    <label for="imageInput">Image:</label>
+    <input type="file" id="imageInput" name="img" accept="image/*" required>
+    <button id="submitButton">Submit</button>
+    <button class="editButton">Edit</button>
+    <button id="updateButton" style="display: none;">Update</button>
+    <button id="deleteButton" style="display: none;">Delete</button>
+    
+    
+
+  </div>
+
+  
+  <p id="successMessage" class="message success">Item added successfully!</p>
+  <p id="errorMessage" class="message error">Error adding item!</p>
+  <button id="addButton">Add Item</button>
+  <script src="script.js"></script>
+</body>
+</html>
