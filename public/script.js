@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('distance_from_earth_miles', parseInt(document.getElementById('distance').value));
         formData.append('img', imageInput.files[0]); // Append the image file
   
-        const response = await fetch('http://localhost:3000/api/constellations', {
+        const response = await fetch('https://constell-part2.onrender.com/api/constellations', {
           method: 'POST',
           body: formData, // Use the FormData object as the body
         });
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const containerId = card.dataset.containerId;
     
       // Fetch the details of the constellation from the server
-      fetch(`http://localhost:3000/api/constellation/${containerId}`)
+      fetch(`https://constell-part2.onrender.com/api/constellation/${containerId}`)
         .then(response => response.json())
         .then(constellation => {
           // Populate the form with the existing data for editing
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
           formData.append('img', imageInput.files[0]);
 
           // Send the update request to the server
-          const response = await fetch(`http://localhost:3000/api/update-constellation/${editingConstellationId}`, {
+          const response = await fetch(`https://constell-part2.onrender.com/api/update-constellation/${editingConstellationId}`, {
               method: 'PUT',
               body: formData,
           });
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (userConfirmed) {
       // If the user confirms, proceed with the deletion
-      fetch(`http://localhost:3000/api/delete-constellation/${containerId}`, {
+      fetch(`https://constell-part2.onrender.com/api/delete-constellation/${containerId}`, {
           method: 'DELETE',
       })
           .then(response => response.json())
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
           .catch(error => console.error('Error:', error));
   }
 
-  fetch(`http://localhost:3000/api/delete-constellation/${containerId}`, {
+  fetch(`https://constell-part2.onrender.com/api/delete-constellation/${containerId}`, {
     method: 'DELETE',
   })
     .then(response => response.json())
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     async function fetchData() {
       try {
-        const response = await fetch('http://localhost:3000/api/constellations');
+        const response = await fetch('https://constell-part2.onrender.com/api/constellations');
         const data = await response.json();
         renderData(data);
       } catch (error) {
